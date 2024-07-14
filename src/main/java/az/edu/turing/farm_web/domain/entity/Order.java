@@ -20,4 +20,8 @@ public class Order {
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "order_id"))
     Set<Product> likedCourses;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
 }
