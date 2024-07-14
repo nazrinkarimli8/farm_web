@@ -1,0 +1,14 @@
+
+debug: true
+
+spring:
+  application:
+    name: farm_web
+  datasource:
+    url: jdbc:postgresql://localhost:5432/farm
+    username: postgres
+    password: nezrin23
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

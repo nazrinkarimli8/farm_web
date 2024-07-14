@@ -2,6 +2,7 @@ package az.edu.turing.farm_web.controller;
 
 import az.edu.turing.farm_web.domain.entity.MeatProduct;
 import az.edu.turing.farm_web.service.MeatProductService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,9 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/meat-products")
+@CrossOrigin
+@RequiredArgsConstructor
 public class MeatProductController {
-    @Autowired
-    private MeatProductService meatProductService;
+
+    private final MeatProductService meatProductService;
 
     @GetMapping
     public List<MeatProduct> getAllMeatProducts() {

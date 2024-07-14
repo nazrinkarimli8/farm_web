@@ -1,14 +1,15 @@
 package az.edu.turing.farm_web.service;
 
+import az.edu.turing.farm_web.domain.entity.Order;
 import az.edu.turing.farm_web.domain.repository.OrderRepository;
-import jakarta.persistence.criteria.Order;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class OrderService {
-    @Autowired
-    private OrderRepository orderRepository;
+
+    private final OrderRepository orderRepository;
 
     public Order createOrder(Order order) {
         return orderRepository.save(order);

@@ -1,6 +1,6 @@
 package az.edu.turing.farm_web.domain.entity;
 
-public enum Role {
+public enum ERole {
     CLIENT,
     FARMER
 }

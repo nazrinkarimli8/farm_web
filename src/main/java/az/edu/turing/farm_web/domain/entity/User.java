@@ -4,25 +4,21 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.management.relation.Role;
 
-@Entity
-@Data
 
+@AllArgsConstructor
+@NoArgsConstructor
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private ERole role;
 
-    public User(Long id, Role role) {
-        this.id = id;
-        this.role = role;
-    }
-    public User(){
-
-    }
 }
 

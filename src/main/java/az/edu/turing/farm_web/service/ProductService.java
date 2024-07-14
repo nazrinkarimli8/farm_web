@@ -2,15 +2,17 @@ package az.edu.turing.farm_web.service;
 
 import az.edu.turing.farm_web.domain.entity.Product;
 import az.edu.turing.farm_web.domain.repository.ProductRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ProductService {
-    @Autowired
-    private ProductRepository productRepository;
+
+    private final ProductRepository productRepository;
 
     public List<Product> getAllProducts() {
         return productRepository.findAll();
