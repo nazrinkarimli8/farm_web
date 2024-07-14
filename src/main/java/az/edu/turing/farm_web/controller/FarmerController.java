@@ -1,6 +1,7 @@
 package az.edu.turing.farm_web.controller;
 
 import az.edu.turing.farm_web.domain.entity.Farmer;
+import az.edu.turing.farm_web.domain.entity.User;
 import az.edu.turing.farm_web.service.FarmerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

@@ -11,12 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table(name = "farmers")
 public class Farmer extends User {
+
     @Column(unique = true)
-    private String farmName;
     private String farmDescription;
-    @OneToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
 
 }
 

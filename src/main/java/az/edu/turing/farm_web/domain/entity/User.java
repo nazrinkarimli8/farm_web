@@ -12,12 +12,23 @@ import javax.management.relation.Role;
 @AllArgsConstructor
 @NoArgsConstructor
 @MappedSuperclass
+@Data
 @EntityListeners(AuditingEntityListener.class)
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Enumerated(EnumType.STRING)
+
+    @Column(name = "full_name")
+    private String fullName;
+
+    @Column(name = "username")
+    private String username;
+
+    @Column(name = "password")
+    private String password;
+
     private ERole role;
 
 }

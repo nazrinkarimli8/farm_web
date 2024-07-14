@@ -15,16 +15,20 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "products")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     Long id;
-     String name;
-     String category;
-     BigDecimal price;
-     String description;
+    private Long id;
+    private String name;
+    private BigDecimal price;
+    private String description;
+    
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+
 }
 
 //fermer

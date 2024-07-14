@@ -1,5 +1,6 @@
 package az.edu.turing.farm_web.domain.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -13,14 +14,11 @@ import javax.management.relation.Role;
 @Builder
 @Data
 @Table(name = "clients")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Client extends User {
     // no additional fields needed for clients
-    public Client() {
-        super();
-    }
-    public Client(Long id, ERole role) {
-        super(id, role);
-    }
-
+    @Column(name = "client_description",unique = true)
+    private String clientDescription;
 
 }

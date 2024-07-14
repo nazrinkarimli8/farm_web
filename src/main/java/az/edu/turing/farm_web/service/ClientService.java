@@ -1,6 +1,7 @@
 package az.edu.turing.farm_web.service;
 
 import az.edu.turing.farm_web.domain.entity.Client;
+import az.edu.turing.farm_web.domain.entity.ERole;
 import az.edu.turing.farm_web.domain.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class ClientService {
     }
 
     public Client createClient(Client client) {
+        client.setRole(ERole.CLIENT);
         return clientRepository.save(client);
     }
 
