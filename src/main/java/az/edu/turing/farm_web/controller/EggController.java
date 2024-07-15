@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/eggs")
 @RequiredArgsConstructor
+@CrossOrigin
 public class EggController {
 
     private final EggService eggService;
