@@ -39,5 +39,10 @@ public class  ProductController {
     public void deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);
     }
+
+    @GetMapping("/findAllByCategoryId")
+    public List<Product> findAllByCategoryId(int categoryId) {
+        return this.productService.findAllByCategoryId(categoryId);
+    }
 }
 
