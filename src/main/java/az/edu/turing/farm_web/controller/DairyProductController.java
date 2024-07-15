@@ -1,6 +1,7 @@
 package az.edu.turing.farm_web.controller;
 
 import az.edu.turing.farm_web.domain.entity.DairyProduct;
+import az.edu.turing.farm_web.dto.request.DairyProductDto;
 import az.edu.turing.farm_web.service.DairyProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,8 @@ public class DairyProductController {
     }
 
     @PostMapping
-    public DairyProduct createDairyProduct(@RequestBody DairyProduct dairyProduct) {
-        return dairyProductService.createDairyProduct(dairyProduct);
+    public DairyProduct createDairyProduct(@RequestBody DairyProductDto dairyProductDto) {
+        return dairyProductService.createDairyProduct(dairyProductDto);
     }
 
     @PutMapping("/{id}")

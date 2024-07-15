@@ -1,6 +1,7 @@
 package az.edu.turing.farm_web.controller;
 
 import az.edu.turing.farm_web.domain.entity.Egg;
+import az.edu.turing.farm_web.dto.request.EggDto;
 import az.edu.turing.farm_web.service.EggService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,8 @@ public class EggController {
     }
 
     @PostMapping
-    public Egg createEgg(@RequestBody Egg egg) {
-        return eggService.createEgg(egg);
+    public Egg createEgg(@RequestBody EggDto eggDto) {
+        return eggService.createEgg(eggDto);
     }
 
     @PutMapping("/{id}")

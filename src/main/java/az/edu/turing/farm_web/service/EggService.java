@@ -2,6 +2,8 @@ package az.edu.turing.farm_web.service;
 
 import az.edu.turing.farm_web.domain.entity.Egg;
 import az.edu.turing.farm_web.domain.repository.EggRepository;
+import az.edu.turing.farm_web.domain.repository.ProductRepository;
+import az.edu.turing.farm_web.dto.request.EggDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import java.util.List;
 public class EggService {
 
     private final EggRepository eggRepository;
+    private final ProductService productService;
 
     public List<Egg> getAllEggs() {
         return eggRepository.findAll();
@@ -21,7 +24,11 @@ public class EggService {
         return eggRepository.findById(id).orElse(null);
     }
 
-    public Egg createEgg(Egg egg) {
+    public Egg createEgg(EggDto eggDto) {
+        Egg egg = new Egg();
+        egg.setCount(eggDto.getCount());
+        egg.setSize(eggDto.getSize());
+        egg.setProduct(productService.createProduct(eggDto));
         return eggRepository.save(egg);
     }
 
